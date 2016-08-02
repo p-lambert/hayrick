@@ -7,7 +7,7 @@ module Hayrick
 
     attr_reader :default_filter
 
-    def initialize(default_filter)
+    def initialize(default_filter = DefaultFilterGenerator.new)
       @default_filter = default_filter
     end
 
