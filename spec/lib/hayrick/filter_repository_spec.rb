@@ -48,25 +48,5 @@ RSpec.describe Hayrick::FilterRepository do
     let(:custom_filter) { -> {} }
 
     it { is_expected.to change { repository.all.size }.from(0).to(1) }
-
-    context 'when custom filter is a callable object' do
-      let(:custom_filter) do
-        Class.new do
-          def call; end
-        end
-      end
-
-      it { is_expected.to change { repository.all.size }.from(0).to(1) }
-    end
-
-    context 'when custom filter is a class that does not respond to #call' do
-      let(:custom_filter) do
-        Class.new do
-          def foo; end
-        end
-      end
-
-      it { is_expected.to raise_error(ArgumentError) }
-    end
   end
 end

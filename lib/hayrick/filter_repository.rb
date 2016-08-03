@@ -12,9 +12,7 @@ module Hayrick
     end
 
     def add(name, callable)
-      prepare_callable(callable).tap do |prepared_callable|
-        merge!(name.to_sym => prepared_callable)
-      end
+      merge!(name.to_sym => callable)
     end
 
     def all
@@ -22,21 +20,5 @@ module Hayrick
         default_filter.call(keyword)
       end
     end
-
-    private
-
-    def prepare_callable(callable)
-      case(callable)
-      when Proc then callable
-      when CallableClass then callable.new.method(:call)
-      else fail(ArgumentError, 'Invalid filter provided.')
-      end
-    end
-
-    CallableClass = lambda do |klass|
-      klass.is_a?(Class) && klass.instance_methods.include?(:call)
-    end
-
-    private_constant :CallableClass
   end
 end
