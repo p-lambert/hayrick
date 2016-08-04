@@ -2,6 +2,8 @@
 *Query Objects without a hitch.*
 
 ---
+[![Build Status](https://travis-ci.org/p-lambert/hayrick.svg?branch=master)](https://travis-ci.org/p-lambert/hayrick)
+
 `Hayrick` lets you easily create
 [Query Objects](http://martinfowler.com/eaaCatalog/queryObject.html), decoupling
 your data models from querying concerns. It is extremely lightweight, having
