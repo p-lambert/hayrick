@@ -3,6 +3,7 @@
 
 ---
 [![Build Status](https://travis-ci.org/p-lambert/hayrick.svg?branch=master)](https://travis-ci.org/p-lambert/hayrick)
+[![Gem Version](https://badge.fury.io/rb/hayrick.svg)](https://badge.fury.io/rb/hayrick)
 
 `Hayrick` lets you easily create
 [Query Objects](http://martinfowler.com/eaaCatalog/queryObject.html), decoupling
